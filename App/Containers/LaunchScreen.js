@@ -8,8 +8,8 @@ import styles from './Styles/LaunchScreenStyles'
 export default class LaunchScreen extends Component {
 
   goHome () {
-    this.props.navigation.navigate('TabNav',{
-      from:"Launch2"
+    this.props.navigation.navigate('HomeScreen',{
+      from:"Launch"
     })
   }
 

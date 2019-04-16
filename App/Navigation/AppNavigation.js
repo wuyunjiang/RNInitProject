@@ -1,17 +1,25 @@
-import { createStackNavigator, createAppContainer, createBottomTabNavigator } from 'react-navigation'
+import { createStackNavigator, createAppContainer, createBottomTabNavigator, createDrawerNavigator } from 'react-navigation'
 import HomeScreen from '../Containers/HomeScreen'
 import LoginScreen from '../Containers/LoginScreen'
 import PersonalScreen from '../Containers/PersonalScreen'
 import LaunchScreen from '../Containers/LaunchScreen'
 
+import DrawerScreen from '../Components/Drawer'
+
 import styles from './Styles/NavigationStyles'
 
 // Manifest of possible screens
 const PrimaryNav = createStackNavigator({
-  TabNav: { 
-    screen: createBottomTabNavigator({
-      HomeScreen: HomeScreen,
-      PersonalScreen: PersonalScreen,
+  DrawerNav: {
+    screen: createDrawerNavigator({
+      TabNav: { 
+        screen: createBottomTabNavigator({
+          HomeScreen: { screen: HomeScreen },
+          PersonalScreen: { screen: PersonalScreen },
+        })
+      },
+    },{
+      contentComponent: DrawerScreen,
     })
   },
   LaunchScreen: { screen: LaunchScreen },
