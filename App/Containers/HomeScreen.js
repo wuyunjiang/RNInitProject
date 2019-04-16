@@ -13,6 +13,7 @@ class HomeScreen extends Component {
       <ScrollView style={styles.container}>
         <KeyboardAvoidingView behavior='position'>
           <Text>HomeScreen</Text>
+          <Text>来至{this.props.navigation.state.params.from}屏幕</Text>
         </KeyboardAvoidingView>
       </ScrollView>
     )
