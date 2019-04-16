@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { ScrollView, Text, Image, View, Button } from 'react-native'
+import { ScrollView, Text, Image, View } from 'react-native'
+import { Button, ThemeProvider } from 'react-native-elements';
 import { Images } from '../Themes'
 
 // Styles
@@ -28,7 +29,9 @@ export default class LaunchScreen extends Component {
               This probably isn't what your app is going to look like. Unless your designer handed you this screen and, in that case, congrats! You're ready to ship. For everyone else, this is where you'll see a live preview of your fully functioning app using Ignite.
             </Text>
           </View>
-          <Button title="进入首页" onPress={this.goHome.bind(this)}/>
+          <ThemeProvider>
+            <Button title="进入首页" onPress={this.goHome.bind(this)}/>
+          </ThemeProvider>
         </ScrollView>
       </View>
     )
